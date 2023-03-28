@@ -1,0 +1,78 @@
+{% load static %}
+{% load rendering_menu %}
+{{ '<' }}{{ '!DOCTYPE html>' }}
+
+
+<html>
+<head>
+    <link type="text/css" href="{% static 'product/css/styles.css' %}" rel="stylesheet" />
+    <link rel="shortcut icon" href="{% static 'product/images/logo.png' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'product/images/liked.png' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'product/images/orders.png' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'product/images/person_profile.png' %}" type="image/x-icon"/>
+
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+{%block main_panel%}
+    {%block write%}
+
+
+    {% if user.is_authenticated %}
+    <div id="rectangle" style="font-size: 2rem; color:#faf0e6">Welcome, dear {{user.username}}!</div>
+    {% else %}
+    <div id="rectangle" style="font-size: 2rem; color:#faf0e6">Welcome, dear friend!</div>
+    {% endif %}
+    {%endblock write%}
+
+    <div id="main_panel">
+
+        <div style="position:absolute; top:+40px">
+            {% if user.is_authenticated %}
+        <a href="{% url 'home_user' %}"> <img align="left" src="/static/product/images/logo.png"> </a>
+            {% else %}
+        <a href="{% url 'home' %}"> <img align="left" src="/static/product/images/logo.png"> </a>
+            {% endif %}
+        </div>
+    </div>
+        {%block menu_panel%}
+        <div id="menu">
+            <div id = "place_categ">
+        {% for e in menu %}
+          {% for  name, url_name in e.items %}
+
+        <a href="{% url 'choose_categ' url_name %}" id="menu_proper">{{name}}</a>
+            {% endfor %}
+        {% endfor %}
+                </div>
+        </div>
+        {%endblock menu_panel%}
+
+    <div class="page-header">
+        <div id="place_profile">
+            {% if user.is_authenticated %}
+        <a href="{% url 'personal_account' %}"> <img  src="/static/product/images/person_profile.png"> </a>
+        <a href="{% url 'liked' %}"> <img  src="/static/product/images/liked.png"> </a>
+        <a href="{% url 'choose_product' %}"> <img  src="/static/product/images/orders.png"> </a>
+            {% else %}
+
+        <a href="{% url 'login' %}"> <img  src="/static/product/images/person_profile.png"> </a>
+        <a href="{% url 'login' %}"> <img  src="/static/product/images/liked.png"> </a>
+        <a href="{% url 'login' %}"> <img  src="/static/product/images/orders.png"> </a>
+             </div>
+            {% endif %}
+     </div>
+    </div>
+    {%endblock main_panel%}
+
+    {%block registrarion%}
+    {%endblock registrarion%}
+
+    {%block content%}
+eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    {%endblock content%}
+
+</body>
+</html>

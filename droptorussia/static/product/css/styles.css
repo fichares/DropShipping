@@ -1,0 +1,99 @@
+html{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+}
+
+
+#rectangle{
+    font: bold 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+	width:100%;
+    height:40px;
+    background:#292929;
+}
+
+#main_panel{
+    font: bold 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+	width:100%;
+    height:32px;
+    padding-top: 40px;
+    background:#EEEEEE;
+}
+
+#menu{
+}
+
+#place_categ{
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    top: -70px;
+    left: 370px;
+    Word-spacing: 9px
+}
+
+#menu_proper{
+    text-decoration: none;
+    color:#1F3641;
+    font-size: 3vw;
+    style=font-weight:150;
+}
+
+#menu_proper_new{
+    text-decoration: none;
+    color:#100000;
+    font-size: 3vw;
+    style=font-weight:150;
+}
+
+
+#place_profile{
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    top: -125px;
+    left: 90%;
+    Word-spacing: 9px
+}
+
+
+#forme_view{
+    position: relative;
+    top: 15px;
+    left: 30%;
+}
+
+.form_view{
+    padding:10px;
+}
+
+#login_show{
+    position: relative;
+    top: 30px;
+    left: 700px;
+    color: #00005f;
+}
+
+#reg_tr{
+    position: relative;
+    top: -4px;
+    left: 650px;
+}
+
+#color_register{
+    color: black;
+    text-decoration: none;
+    size: 10px;
+}
+
+.container {
+ }
+
+.row  {
+}

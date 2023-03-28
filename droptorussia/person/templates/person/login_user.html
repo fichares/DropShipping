@@ -1,0 +1,22 @@
+{% extends "product/home.html" %}
+
+{%block registrarion%}
+
+<h1 id="login_show">Login</h1>
+
+<form method="post" id="forme_view"  >
+    {% csrf_token %}
+
+<div>{{ form.non_field_errors }}</div>
+
+{% for f in form %}
+<p class="form_view"><label >{{f.label}}: </label>{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+    <button type="submit" align="center" >Войти</button>
+</form>
+
+    <div id="reg_tr"> <a href="{% url 'register' %}" id="color_register">registration</a></div>
+
+{%endblock registrarion%}

@@ -1,0 +1,42 @@
+{% extends "product/home.html" %}
+
+
+
+    {%block content%}
+    <div class="container">
+        <div class="row">
+    {% for e in product%}
+            <img src="{{e.photo.url}}">
+           <li align="center" >  {{e.price}} Rubles
+            <p></p>
+         {{e.name}}
+            <p></p>
+        {% if forloop.counter|divisibleby:3 %}
+            </div>
+           </li>
+     <div class="row">
+    {% endif %}
+    {% endfor %}
+
+      </div>
+    </div>
+
+    {%endblock content%}
+
+    {%block menu_panel%}
+        <div id="menu">
+            <div id = "place_categ">
+        {% for e in menu %}
+          {% for  name, url_name in e.items %}
+
+            {% if url_name == now_categ %}
+        <a href="{% url 'choose_categ' url_name %}" id="menu_proper_new">{{name}}</a>
+                {% else %}
+        <a href="{% url 'choose_categ' url_name %}" id="menu_proper">{{name}}</a>
+            {% endif %}
+
+            {% endfor %}
+        {% endfor %}
+                </div>
+        </div>
+        {%endblock menu_panel%}
