@@ -3,23 +3,58 @@
 
 
     {%block content%}
-    <div class="container">
-        <div class="row">
-    {% for e in product%}
-            <img src="{{e.photo.url}}">
-           <li align="center" >  {{e.price}} Rubles
-            <p></p>
-         {{e.name}}
-            <p></p>
-        {% if forloop.counter|divisibleby:3 %}
-            </div>
-           </li>
-     <div class="row">
-    {% endif %}
-    {% endfor %}
+    <div id="filter_position">
+        <div class="filter_position_text" >
 
-      </div>
+            <span style=" font-size:23px;">Filters:</span>
+
+            <div class="dropdown">
+<button class="dropbtn">Category</button>
+<div class="dropdown-content">
+        {% for name_categ in categ_product%}
+    <a href="{% url 'filter_product' now_categ name_categ %}">{{name_categ}}</a>
+        {% endfor %}
     </div>
+</div>
+
+
+            <div class="dropdown" style="margin-left:-3px;">
+<button class="dropbtn">Price</button>
+<div class="dropdown-content">
+
+    <a href="{% url 'filter_product' now_categ 'descending'%}">descending </a>
+    <a href="{% url 'filter_product' now_categ 'ascending'%}">ascending</a>
+    </div>
+</div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <p style="margin-top:50px"></p>
+    <div class="container">
+    {% for e in product%}
+         <div class="element">
+
+             <div class="in_block_element">
+            <a href="{% url 'product_view' now_categ e.url_name %}" class="displays_href_product">
+            <img src="{{e.photo.url}}">
+
+                    <div style="text-decoration: underline; color:black; text-align: center; ">  {{e.price}} Rubles
+            <p style="text-decoration: none;">{{e.name}}</p>
+
+                       </div>
+               </a>
+            </div>
+
+         </div>
+
+    {% endfor %}
+      </div>
 
     {%endblock content%}
 
