@@ -16,7 +16,7 @@ class My_product(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     gender = models.TextField(default='men')
-    articules = models.IntegerField()
+    articules = models.IntegerField(unique=True)
     photo = models.ImageField()
 
     def __str__(self):

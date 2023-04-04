@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "product/home.html" %}
 
-</body>
-</html>
+
+    {%block content%}
+<h1 class="main_text_cab">Profile</h1>
+
+    <div class="block_person">
+        <img id="main_person_photo" src="{{ user.photo.url }}" >
+
+    </div>
+
+<div id="form_update_person_menu">
+<form method="post"   >
+    {% csrf_token %}
+
+<div>{{ form.non_field_errors }}</div>
+
+{% for f in form %}
+<p class="form_view"><label >{{f.label}}: </label>{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+    <button type="submit" align="center" >save</button>
+</form>
+</div>
+
+<a href="{{request.META.HTTP_REFERER}}" class="person_back_go">Go back</a>
+<a href="{% url 'logout' %}" id="logout_system">Log out of system</a>
+    {%endblock content%}
+
+
+

@@ -56,9 +56,9 @@ body{
 #place_profile{
     width: 500px;
     overflow: hidden;
-    position: relative;
-    top: -125px;
-    left: 90%;
+    position: absolute;
+    right: -320px;
+    top: 50px;
     Word-spacing: 9px
 }
 
@@ -96,7 +96,7 @@ body{
     width: 100%;
      height: 50px;
      border: 1px solid black;
-     margin-top:-115px;
+     margin-top:-62px;
 }
 
 .filter_position_text{
@@ -168,3 +168,74 @@ body{
 .dropdown-content a:hover {background-color: white;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: grey;}
+
+.photo_inly_product {
+   position:absolute;
+   top:160px;
+   left:120px;
+   right:100px;
+}
+
+.block_only_product{
+    display: block;
+    margin-left:58%;
+}
+
+.go_back_view{
+     text-decoration: none;
+     color:black;
+     border: 1px solid black;
+     padding: 7px;
+     position: relative;
+     top: 90px;
+}
+
+.main_text_cab{
+   position:absolute;
+   top:160px;
+   left:660px;
+   font-size: 45px;
+}
+
+#main_person_photo{
+    position: relative;
+    height: 420px;
+    width: 420px;
+    top:100px;
+    left: 50px;
+}
+
+#form_update_person_menu{
+    position: relative;
+    margin-left:58%;
+    top:-300px;
+}
+
+.person_back_go{
+    text-decoration: none;
+     color:black;
+     border: 1px solid black;
+     padding: 7px;
+     position: relative;
+     top: -320px;
+     left:75%;
+}
+
+#logout_system{
+     text-decoration: none;
+     color:black;
+     border: 1px solid black;
+     padding: 7px;
+     position: relative;
+     top: -950px;
+     left:86%;
+}
+
+.love_it_png{
+    position: relative;
+    height: 30px;
+    width: 40px;
+    top: -310px;
+    left: 990px;
+    content: attr(data-title);
+}

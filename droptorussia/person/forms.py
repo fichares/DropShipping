@@ -16,3 +16,12 @@ class UserRegisterForm(UserCreationForm):
 class LoginUserForm(AuthenticationForm):
     username = forms.CharField( widget=forms.TextInput(attrs={'class': 'form-input', 'size': '30', 'rows':'20'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-input', 'size': '30', 'rows':'20'}))
+
+class UserProfile(forms.ModelForm):
+    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    first_name = forms.CharField(label='Name', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    last_name = forms.CharField(label='Last_name', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'adress', 'email', 'photo')

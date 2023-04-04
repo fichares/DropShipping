@@ -12,7 +12,7 @@
 <button class="dropbtn">Category</button>
 <div class="dropdown-content">
         {% for name_categ in categ_product%}
-    <a href="{% url 'filter_product' now_categ name_categ %}">{{name_categ}}</a>
+    <a href="{% url 'filters_add_liked'  name_categ %}">{{name_categ}}</a>
         {% endfor %}
     </div>
 </div>
@@ -22,8 +22,8 @@
 <button class="dropbtn">Price</button>
 <div class="dropdown-content">
 
-    <a href="{% url 'filter_product' now_categ 'descending'%}">descending </a>
-    <a href="{% url 'filter_product' now_categ 'ascending'%}">ascending</a>
+    <a href="{% url 'filters_add_liked'  'descending'%}">descending </a>
+    <a href="{% url 'filters_add_liked'  'ascending'%}">ascending</a>
     </div>
 </div>
 
@@ -33,8 +33,6 @@
     </div>
 
 
-
-
     <p style="margin-top:50px"></p>
     <div class="container">
     {% for e in product%}
@@ -42,7 +40,7 @@
 
              <div class="in_block_element">
 
-            <a href="{% url 'product_view' now_categ 'clothes' e.url_name %}" class="displays_href_product">
+            <a href="{% url 'product_view' e.gender 'clothes' e.url_name %}" class="displays_href_product">
 
 
             <img src="{{e.photo.url}}">
@@ -61,20 +59,3 @@
 
     {%endblock content%}
 
-    {%block menu_panel%}
-        <div id="menu">
-            <div id = "place_categ">
-        {% for e in menu %}
-          {% for  name, url_name in e.items %}
-
-            {% if url_name == now_categ %}
-        <a href="{% url 'choose_categ' url_name %}" id="menu_proper_new">{{name}}</a>
-                {% else %}
-        <a href="{% url 'choose_categ' url_name %}" id="menu_proper">{{name}}</a>
-            {% endif %}
-
-            {% endfor %}
-        {% endfor %}
-                </div>
-        </div>
-        {%endblock menu_panel%}

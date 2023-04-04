@@ -53,7 +53,7 @@
     <div class="page-header">
         <div id="place_profile">
             {% if user.is_authenticated %}
-        <a href="{% url 'personal_account' %}"> <img  src="/static/product/images/person_profile.png"> </a>
+        <a href="{% url 'personal_account' user.pk %}"> <img  src="/static/product/images/person_profile.png"> </a>
         <a href="{% url 'liked' %}"> <img  src="/static/product/images/liked.png"> </a>
         <a href="{% url 'choose_product' %}"> <img  src="/static/product/images/orders.png"> </a>
             {% else %}

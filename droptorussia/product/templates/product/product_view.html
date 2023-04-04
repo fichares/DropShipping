@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "product/home.html" %}
 
-</body>
-</html>
+    {%block content%}
+
+      <img class="photo_inly_product" src="{{ now_my_product.photo.url }}" >
+
+     <div class="block_only_product">
+        <p style="font-weight:bold; font-size:26px;"> {{now_my_product.name}}</p>
+         <span  style="font-weight:lighter; font-size:15px; color:grey;">articules: {{now_my_product.articules}}</span>
+         <p></p>
+         <span style="font-weight:bold; font-size:21px;">{{now_my_product.price}} rubles</span>
+         <p></p>
+         <p align="center">Description</p>
+         <p>{{now_my_product.description}}</p>
+     </div>
+
+    <a href="{% url 'add_liked' now_my_product.pk %}" >
+        <img src="/static/product/images/love_it.png" class="love_it_png"  data-title="Софийский собор">
+    </a>
+
+    <p >
+        <a href="{{request.META.HTTP_REFERER}}" class="go_back_view" >Go back</a>
+
+
+        </p>
+    {%endblock content%}
